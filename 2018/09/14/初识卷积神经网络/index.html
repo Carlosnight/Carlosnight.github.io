@@ -108,20 +108,43 @@
 
 
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="卷积神经网络概述卷积神经网络或CovNets,是一种空间上共享参数的神经网络。假设有一张图片，包含高度、宽度和深度（RGB三色通道）。此时运行一个具有K个输出的小神经网络，如下图，这样把输出表示为垂直的一小列，，在不改变权重的情况下，把这个小神经网络滑过整个图片，就像刷墙一样水平垂直的滑动。这样滑完整个图片后，在输出端，就画出一副新的图片，如下图，它的宽度和高度与输入图片不同，更重要的是，它的深度">
+<meta name="keywords" content="deepinglearning">
+<meta property="og:type" content="article">
+<meta property="og:title" content="初识卷积神经网络">
+<meta property="og:url" content="http://yoursite.com/2018/09/14/初识卷积神经网络/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="卷积神经网络概述卷积神经网络或CovNets,是一种空间上共享参数的神经网络。假设有一张图片，包含高度、宽度和深度（RGB三色通道）。此时运行一个具有K个输出的小神经网络，如下图，这样把输出表示为垂直的一小列，，在不改变权重的情况下，把这个小神经网络滑过整个图片，就像刷墙一样水平垂直的滑动。这样滑完整个图片后，在输出端，就画出一副新的图片，如下图，它的宽度和高度与输入图片不同，更重要的是，它的深度">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="https://i.loli.net/2018/03/24/5ab6516b8e780.png">
+<meta property="og:image" content="https://i.loli.net/2018/03/24/5ab652c47461b.png">
+<meta property="og:image" content="https://i.loli.net/2018/03/24/5ab6537dc971c.png">
+<meta property="og:image" content="https://i.loli.net/2018/03/24/5ab654f74c7eb.png">
+<meta property="og:image" content="https://i.loli.net/2018/03/24/5ab657509e6f9.png">
+<meta property="og:image" content="https://i.loli.net/2018/03/24/5ab65beb1f5ce.png">
+<meta property="og:image" content="https://i.loli.net/2018/03/24/5ab65c796b9d8.png">
+<meta property="og:image" content="https://i.loli.net/2018/03/24/5ab65cb834be8.png">
+<meta property="og:image" content="https://i.loli.net/2018/03/24/5ab65dbd7e47e.png">
+<meta property="og:image" content="https://i.loli.net/2018/03/24/5ab66eb1d7a34.png">
+<meta property="og:image" content="https://i.loli.net/2018/03/24/5ab671481eb27.png">
+<meta property="og:image" content="https://i.loli.net/2018/03/24/5ab6721fb843d.png">
+<meta property="og:image" content="https://i.loli.net/2018/03/25/5ab6ffca88cbb.png">
+<meta property="og:image" content="https://i.loli.net/2018/03/25/5ab7031e30dd3.png">
+<meta property="og:image" content="https://i.loli.net/2018/03/25/5ab7073732123.png">
+<meta property="og:image" content="https://i.loli.net/2018/03/25/5ab709e0b406c.gif">
+<meta property="og:image" content="https://i.loli.net/2018/03/25/5ab70c5acbe82.png">
+<meta property="og:updated_time" content="2018-09-14T02:30:28.235Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="初识卷积神经网络">
+<meta name="twitter:description" content="卷积神经网络概述卷积神经网络或CovNets,是一种空间上共享参数的神经网络。假设有一张图片，包含高度、宽度和深度（RGB三色通道）。此时运行一个具有K个输出的小神经网络，如下图，这样把输出表示为垂直的一小列，，在不改变权重的情况下，把这个小神经网络滑过整个图片，就像刷墙一样水平垂直的滑动。这样滑完整个图片后，在输出端，就画出一副新的图片，如下图，它的宽度和高度与输入图片不同，更重要的是，它的深度">
+<meta name="twitter:image" content="https://i.loli.net/2018/03/24/5ab6516b8e780.png">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/09/14/初识卷积神经网络/"/>
 
 
 
@@ -131,7 +154,7 @@
   };
 </script>
 
-  <title>Hexo</title>
+  <title>初识卷积神经网络 | Hexo</title>
   
 
 
@@ -178,8 +201,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -216,7 +238,7 @@
         
         
           
-          <li class="menu-item menu-item-home menu-item-active">
+          <li class="menu-item menu-item-home">
     <a href="/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Startseite</a>
   </li>
@@ -284,9 +306,9 @@
           
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -318,11 +340,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/14/初识卷积神经网络/" itemprop="url">
-                  初识卷积神经网络
-                </a>
+          <h1 class="post-title" itemprop="name headline">初识卷积神经网络
               
             
           </h1>
@@ -385,9 +403,7 @@
       
 
       
-        
-          
-            <h1 id="卷积神经网络概述"><a href="#卷积神经网络概述" class="headerlink" title="卷积神经网络概述"></a>卷积神经网络概述</h1><p>卷积神经网络或CovNets,是一种空间上共享参数的神经网络。<br>假设有一张图片，包含高度、宽度和深度（RGB三色通道）。此时运行一个具有K个输出的小神经网络，如下图，这样把输出表示为垂直的一小列，，在不改变权重的情况下，把这个小神经网络滑过整个图片，就像刷墙一样水平垂直的滑动。<br><img src="https://i.loli.net/2018/03/24/5ab6516b8e780.png" alt="image"><br>这样滑完整个图片后，在输出端，就画出一副新的图片，如下图，它的宽度和高度与输入图片不同，更重要的是，它的深度跟之前不同，下现在不只是RGB三色通道,而是得到了K个颜色通道，这种操作叫做卷积。<br><img src="https://i.loli.net/2018/03/24/5ab652c47461b.png" alt="image"><br>如果你的块(patch)和整张图片一样大，那就和普通的神经网络没有区别。如下图：<img src="https://i.loli.net/2018/03/24/5ab6537dc971c.png" alt="image"><br>正是由于使用了小块，所以在整个空间共享较少的权重，卷积网络基本上是一个深度网络，但使用了共享权重的”卷积层”替代了一般的”全连接层”。<br>总的想法是让他们形成金字塔状，如下图所示，金字塔底部是一个非常大而浅的图片，仅包括红绿蓝三通道，通过卷积操作逐渐挤压空间的维度，同时不断增加深度，使深度信息大体上可表示出复杂的语义；在金字塔顶端，是一个分类器(classifier)，所有空间信息都被压缩成一个表示仅映射到图片内容的参数被保留。<br><img src="https://i.loli.net/2018/03/24/5ab654f74c7eb.png" alt="image"><br>如果想要实现，必须正确实现很多细节，还要习惯一些神经网络语言，像块(patch)和深度(depth),块有时也叫做核(Kernel)，堆栈中的每张图片都叫做特征图，如下图：<br><img src="https://i.loli.net/2018/03/24/5ab657509e6f9.png" alt="image"><br>这里，将三个特征图映射到K特征图。<br>还有一个术语叫做步幅(stride)，他是当移动过滤器时平移的像素的数量，步幅为1时输出的尺寸和输入大体相同，步幅为2时，尺寸为一半。如果移动从不超越边界，这种通常称为有效填充(vaild padding)。如果在边界外使用0填充，这样就会得到和输入图相同大小的输出图，这通常称为相同填充(same padding)。  </p>
+        <h1 id="卷积神经网络概述"><a href="#卷积神经网络概述" class="headerlink" title="卷积神经网络概述"></a>卷积神经网络概述</h1><p>卷积神经网络或CovNets,是一种空间上共享参数的神经网络。<br>假设有一张图片，包含高度、宽度和深度（RGB三色通道）。此时运行一个具有K个输出的小神经网络，如下图，这样把输出表示为垂直的一小列，，在不改变权重的情况下，把这个小神经网络滑过整个图片，就像刷墙一样水平垂直的滑动。<br><img src="https://i.loli.net/2018/03/24/5ab6516b8e780.png" alt="image"><br>这样滑完整个图片后，在输出端，就画出一副新的图片，如下图，它的宽度和高度与输入图片不同，更重要的是，它的深度跟之前不同，下现在不只是RGB三色通道,而是得到了K个颜色通道，这种操作叫做卷积。<br><img src="https://i.loli.net/2018/03/24/5ab652c47461b.png" alt="image"><br>如果你的块(patch)和整张图片一样大，那就和普通的神经网络没有区别。如下图：<img src="https://i.loli.net/2018/03/24/5ab6537dc971c.png" alt="image"><br>正是由于使用了小块，所以在整个空间共享较少的权重，卷积网络基本上是一个深度网络，但使用了共享权重的”卷积层”替代了一般的”全连接层”。<br>总的想法是让他们形成金字塔状，如下图所示，金字塔底部是一个非常大而浅的图片，仅包括红绿蓝三通道，通过卷积操作逐渐挤压空间的维度，同时不断增加深度，使深度信息大体上可表示出复杂的语义；在金字塔顶端，是一个分类器(classifier)，所有空间信息都被压缩成一个表示仅映射到图片内容的参数被保留。<br><img src="https://i.loli.net/2018/03/24/5ab654f74c7eb.png" alt="image"><br>如果想要实现，必须正确实现很多细节，还要习惯一些神经网络语言，像块(patch)和深度(depth),块有时也叫做核(Kernel)，堆栈中的每张图片都叫做特征图，如下图：<br><img src="https://i.loli.net/2018/03/24/5ab657509e6f9.png" alt="image"><br>这里，将三个特征图映射到K特征图。<br>还有一个术语叫做步幅(stride)，他是当移动过滤器时平移的像素的数量，步幅为1时输出的尺寸和输入大体相同，步幅为2时，尺寸为一半。如果移动从不超越边界，这种通常称为有效填充(vaild padding)。如果在边界外使用0填充，这样就会得到和输入图相同大小的输出图，这通常称为相同填充(same padding)。  </p>
 <p>广义来说，CNN的学习方式是：他识别基本的直线，曲线，然后是形状，点块，然后是图片中更复杂的物体。最终CNN分类器把这些大的，复杂的物体综合起来识别图片。<br>有了深度学习，就不需要设定CNN来识别特定的特征。相反，CNN通过正向和反向传播，自己学习识别物体，尽管从没有让CNN寻找特定的特征信息，但是它识别图片的能力却好的惊人。<br>CNN可能有几层网络，每个层可能捕获对象抽象层次中的不同级别。第一层是抽象层次的最底级，CNN一般把图片中的较小的部分识别成简单的形状，例如水平、竖直的直线，简单的色块。下一层将会上升到更高的抽象层次，一般会识别更复杂的概念，例如形状(线的组合)，以此类推直至最终识别整个物体。<br>需要强调的是，CNN是自主学习。并不需要告诉CNN去寻找任何直线、曲线、鼻子、毛发等，CNN从训练集中学习并发现被识别物体值得寻找的特征。  </p>
 <h2 id="分解一张图片"><a href="#分解一张图片" class="headerlink" title="分解一张图片"></a>分解一张图片</h2><p>CNN 的第一步是把图片分成小块，通过选取一个给定宽度和高度的滤波器来实现这一步。滤波器会照在图片的小块 patch （图像区块）上。这些 patch 的大小与滤波器一样大。如下图：<br><img src="https://i.loli.net/2018/03/24/5ab65beb1f5ce.png" alt="image"><br>可以在水平方向，或者竖直方向滑动滤波器对图片的不同部分进行聚焦。<br>滤波器滑动的间隔被称作 stride（步长）。这是可以调节的一个超参数。增大 stride 值后，会减少每层总 patch 数量，因此也减小了模型大小。通常这也会降低图像精度。<br>如下详细例子，在这个放大的狗图片中，从红框开始，滤波器的高和宽决定了这个正方形的大小。<br><img src="https://i.loli.net/2018/03/24/5ab65c796b9d8.png" alt="image"><br>然后向右把方块移动一个给定的步长（这里是2），得到另一块 patch。<br><img src="https://i.loli.net/2018/03/24/5ab65cb834be8.png" alt="image"><br>这里最重要的是把相邻的像素聚在一起，把他们视作一个集合。   </p>
 <blockquote>
@@ -450,8 +466,6 @@
 <h3 id="模型实现"><a href="#模型实现" class="headerlink" title="模型实现"></a>模型实现</h3><p>在下面的代码中，创建了 3 层来实现卷积，最大池化以及全链接层和输出层。每一层对维度的改变都写在注释里。例如第一层在卷积部分把图片从 28x28x1 变成了 28x28x32。后面应用了最大池化，每个样本变成了 14x14x32。从 conv1 经过多层网络，最后到 output 生成 10 个分类。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">conv_net</span><span class="params">(x, weights, biases, dropout)</span>:</span></span><br><span class="line">    <span class="comment"># Layer 1 - 28*28*1 to 14*14*32</span></span><br><span class="line">    conv1 = conv2d(x, weights[<span class="string">'wc1'</span>], biases[<span class="string">'bc1'</span>])</span><br><span class="line">    conv1 = maxpool2d(conv1, k=<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Layer 2 - 14*14*32 to 7*7*64</span></span><br><span class="line">    conv2 = conv2d(conv1, weights[<span class="string">'wc2'</span>], biases[<span class="string">'bc2'</span>])</span><br><span class="line">    conv2 = maxpool2d(conv2, k=<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Fully connected layer - 7*7*64 to 1024</span></span><br><span class="line">    fc1 = tf.reshape(conv2, [<span class="number">-1</span>, weights[<span class="string">'wd1'</span>].get_shape().as_list()[<span class="number">0</span>]])</span><br><span class="line">    fc1 = tf.add(tf.matmul(fc1, weights[<span class="string">'wd1'</span>]), biases[<span class="string">'bd1'</span>])</span><br><span class="line">    fc1 = tf.nn.relu(fc1)</span><br><span class="line">    fc1 = tf.nn.dropout(fc1, dropout)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Output Layer - class prediction - 1024 to 10</span></span><br><span class="line">    out = tf.add(tf.matmul(fc1, weights[<span class="string">'out'</span>]), biases[<span class="string">'out'</span>])</span><br><span class="line">    <span class="keyword">return</span> out</span><br></pre></td></tr></table></figure></p>
 <h3 id="Session-运行"><a href="#Session-运行" class="headerlink" title="Session(运行)"></a>Session(运行)</h3><p>运行神经网络<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># tf Graph input</span></span><br><span class="line">x = tf.placeholder(tf.float32, [<span class="keyword">None</span>, <span class="number">28</span>, <span class="number">28</span>, <span class="number">1</span>])</span><br><span class="line">y = tf.placeholder(tf.float32, [<span class="keyword">None</span>, n_classes])</span><br><span class="line">keep_prob = tf.placeholder(tf.float32)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Model</span></span><br><span class="line">logits = conv_net(x, weights, biases, keep_prob)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Define loss and optimizer</span></span><br><span class="line">cost = tf.reduce_mean(\</span><br><span class="line">    tf.nn.softmax_cross_entropy_with_logits(logits=logits, labels=y))</span><br><span class="line">optimizer = tf.train.GradientDescentOptimizer(learning_rate=learning_rate)\</span><br><span class="line">    .minimize(cost)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Accuracy</span></span><br><span class="line">correct_pred = tf.equal(tf.argmax(logits, <span class="number">1</span>), tf.argmax(y, <span class="number">1</span>))</span><br><span class="line">accuracy = tf.reduce_mean(tf.cast(correct_pred, tf.float32))</span><br><span class="line"></span><br><span class="line"><span class="comment"># Initializing the variables</span></span><br><span class="line">init = tf. global_variables_initializer()</span><br><span class="line"></span><br><span class="line"><span class="comment"># Launch the graph</span></span><br><span class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:</span><br><span class="line">    sess.run(init)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> epoch <span class="keyword">in</span> range(epochs):</span><br><span class="line">        <span class="keyword">for</span> batch <span class="keyword">in</span> range(mnist.train.num_examples//batch_size):</span><br><span class="line">            batch_x, batch_y = mnist.train.next_batch(batch_size)</span><br><span class="line">            sess.run(optimizer, feed_dict=&#123;</span><br><span class="line">                x: batch_x,</span><br><span class="line">                y: batch_y,</span><br><span class="line">                keep_prob: dropout&#125;)</span><br><span class="line"></span><br><span class="line">            <span class="comment"># Calculate batch loss and accuracy</span></span><br><span class="line">            loss = sess.run(cost, feed_dict=&#123;</span><br><span class="line">                x: batch_x,</span><br><span class="line">                y: batch_y,</span><br><span class="line">                keep_prob: <span class="number">1.</span>&#125;)</span><br><span class="line">            valid_acc = sess.run(accuracy, feed_dict=&#123;</span><br><span class="line">                x: mnist.validation.images[:test_valid_size],</span><br><span class="line">                y: mnist.validation.labels[:test_valid_size],</span><br><span class="line">                keep_prob: <span class="number">1.</span>&#125;)</span><br><span class="line"></span><br><span class="line">            print(<span class="string">'Epoch &#123;:&gt;2&#125;, Batch &#123;:&gt;3&#125; -'</span></span><br><span class="line">                  <span class="string">'Loss: &#123;:&gt;10.4f&#125; Validation Accuracy: &#123;:.6f&#125;'</span>.format(</span><br><span class="line">                epoch + <span class="number">1</span>,</span><br><span class="line">                batch + <span class="number">1</span>,</span><br><span class="line">                loss,</span><br><span class="line">                valid_acc))</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Calculate Test Accuracy</span></span><br><span class="line">    test_acc = sess.run(accuracy, feed_dict=&#123;</span><br><span class="line">        x: mnist.test.images[:test_valid_size],</span><br><span class="line">        y: mnist.test.labels[:test_valid_size],</span><br><span class="line">        keep_prob: <span class="number">1.</span>&#125;)</span><br><span class="line">    print(<span class="string">'Testing Accuracy: &#123;&#125;'</span>.format(test_acc))</span><br></pre></td></tr></table></figure></p>
 
-          
-        
       
     </div>
 
@@ -473,162 +487,36 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/12/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/12/hello-world/" itemprop="url">
-                  Hello World
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-
-              
-                
-              
-
-              <time title="Post created: 2018-09-12 23:13:17" itemprop="dateCreated datePublished" datetime="2018-09-12T23:13:17+08:00">2018-09-12</time>
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-
+            <a href="/tags/deepinglearning/" rel="tag"># deepinglearning</a>
           
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
-        
-      
-    </div>
-
-    
-      
-
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
       
 
       
       
-        <div class="post-eof"></div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/12/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
       
     </footer>
   </div>
@@ -638,14 +526,15 @@
   </article>
 
 
-    
-  </section>
-
-  
+  </div>
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -666,8 +555,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Übersicht
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -743,6 +641,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#卷积神经网络概述"><span class="nav-number">1.</span> <span class="nav-text">卷积神经网络概述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#分解一张图片"><span class="nav-number">1.1.</span> <span class="nav-text">分解一张图片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#滤波器深度-Filter-Depth"><span class="nav-number">1.2.</span> <span class="nav-text">滤波器深度(Filter Depth)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参数共享"><span class="nav-number">1.3.</span> <span class="nav-text">参数共享</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#维度"><span class="nav-number">1.4.</span> <span class="nav-text">维度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参数数量"><span class="nav-number">1.5.</span> <span class="nav-text">参数数量</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#卷积神经网络的TensorFlow实现"><span class="nav-number">2.</span> <span class="nav-text">卷积神经网络的TensorFlow实现</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Tensorflow卷积层"><span class="nav-number">2.1.</span> <span class="nav-text">Tensorflow卷积层</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TensorFlow最大池化"><span class="nav-number">2.2.</span> <span class="nav-text">TensorFlow最大池化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#池化机制-维度大小"><span class="nav-number">2.2.1.</span> <span class="nav-text">池化机制(维度大小)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Inception模块"><span class="nav-number">2.3.</span> <span class="nav-text">Inception模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TensorFlow中的卷积网络实例"><span class="nav-number">2.4.</span> <span class="nav-text">TensorFlow中的卷积网络实例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据集"><span class="nav-number">2.4.1.</span> <span class="nav-text">数据集</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Weights-and-biases"><span class="nav-number">2.4.2.</span> <span class="nav-text">Weights and biases</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#卷积"><span class="nav-number">2.4.3.</span> <span class="nav-text">卷积</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最大池化"><span class="nav-number">2.4.4.</span> <span class="nav-text">最大池化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模型实现"><span class="nav-number">2.4.5.</span> <span class="nav-text">模型实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Session-运行"><span class="nav-number">2.4.6.</span> <span class="nav-text">Session(运行)</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -880,6 +794,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.1"></script>
+
+
 
   
 
