@@ -584,7 +584,7 @@
 <blockquote>
 <p>如果在上传过程中出现 fatal: refusing to merge unrelated histories 错误，多半是因为本地库和云端库出现了不一致，两个分支之间没有取得联系，该错误会在git pull,git push,git merge时遇到，解决方法如下：</p>
 <p>在运行的git命令后面加上 –allow-unrelated-histories</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span> git push origin master --allow-unrelated-histories</span><br><span class="line"><span class="meta">&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash"> git push origin master --allow-unrelated-histories</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"></span></span><br></pre></td></tr></table></figure>
 </blockquote>
 <p>在本地库做了任何改动后，都可以使用如下语句，直接添加、提交、同步到Github上。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m "xxx"</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
